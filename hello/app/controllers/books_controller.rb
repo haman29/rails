@@ -26,7 +26,6 @@ class BooksController < ApplicationController
   # GET /books/new.json
   def new
     @book = Book.new
-
     respond_to do |format|
       format.html # new.html.erb
       format.json { render json: @book }
@@ -41,7 +40,16 @@ class BooksController < ApplicationController
   # POST /books
   # POST /books.json
   def create
-    @book = Book.new(params[:book])
+    # @book = Book.new(params[:book])
+
+    # @book = Book.new(params[:book]) と同等
+    @book           = Book.new
+    @book.isbn      = params[:book][:isbn]
+    @book.title     = params[:book][:title]
+    @book.price     = params[:book][:price]
+    @book.publish   = params[:book][:publish]
+    @book.published = params[:book][:published]
+    @book.cd        = params[:book][:cd]
 
     respond_to do |format|
       if @book.save
@@ -57,7 +65,16 @@ class BooksController < ApplicationController
   # PUT /books/1
   # PUT /books/1.json
   def update
-    @book = Book.find(params[:id])
+    # @book = Book.find(params[:id])
+
+    # @book = Book.find(params[:id]) と同等
+    @book           = Book.find(params[:id])
+    @book.isbn      = params[:book][:isbn]
+    @book.title     = params[:book][:title]
+    @book.price     = params[:book][:price]
+    @book.publish   = params[:book][:publish]
+    @book.published = params[:book][:published]
+    @book.cd        = params[:book][:cd]
 
     respond_to do |format|
       if @book.update_attributes(params[:book])

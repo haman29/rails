@@ -1,4 +1,6 @@
 Hello::Application.routes.draw do
+  get "record/find"
+
   resources :fun_comments
 
 
