@@ -1,0 +1,30 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Name:</strong>
+  <%= @artist.name %>
+</p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @artist.created_at %>
+</p>
+
+<p>
+  <strong>Updated at:</strong>
+  <%= @artist.updated_at %>
+</p>
+
+<p>
+  <strong>Deleted at:</strong>
+  <%= @artist.deleted_at %>
+</p>
+
+<p>
+  <strong>Del flg:</strong>
+  <%= @artist.del_flg %>
+</p>
+
+
+<%= link_to 'Edit', edit_artist_path(@artist) %> |
+<%= link_to 'Back', artists_path %>
